@@ -1,30 +1,36 @@
 <html>
     <head>
-        <title> Daniel Noshadha</title>
-        <link rel="stylesheet" href="css/main.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="js/main.js"></script>
-        <!-- <script src="js/main.js"></script> -->
+        <title> Daniel Noshadha </title>
+        <link rel="stylesheet" href="css/main.css">         <!-- Main styling -->
+        <link rel="stylesheet" href="css/index-page.css">   <!-- Index page styling -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> <!-- jQuery -->
+        <script src="js/main.js"></script>                  <!-- Main scripts -->
+        <script src="js/redirecting-pages.js"></script>     <!-- Redirecting script -->
     </head>
     <body>
 
         <!-- Preloader -->
         <div class="slide" id="preloader">
 
-            <div class="loader">            <!-- Big circle -->
+            <!-- Big circle -->
+            <div class="loader">            
 
+                <!-- Div for text -->
                 <div class="text-box">
 
-                    <button id='bt' type="button" onclick='redirect_Page_About(this)' class="button hoverable">About</button>
-                    <br><button id='bt1' type="button" onclick='redirect_Page_CV(this)' class="button hoverable">CV</button>
-                    <br><button id='bt2' type="button" onclick='redirect_Page_Portfolio(this)' class="button hoverable">Portfolio</button>
-                    <br><button id='bt3' type="button" onclick='redirect_Page_Contacts(this)' class="button hoverable">Contacts</button>
+                    <!-- Navigation only on index.html -->
+                    <button id='bt' type="button" onclick='redirect_Page_About(this)' class="button hoverable-text">About</button>
+                    <br><button id='bt1' type="button" onclick='redirect_Page_CV(this)' class="button hoverable-text">CV</button>
+                    <br><button id='bt2' type="button" onclick='redirect_Page_Portfolio(this)' class="button hoverable-text">Portfolio</button>
+                    <br><button id='bt3' type="button" onclick='redirect_Page_Contacts(this)' class="button hoverable-text">Contacts</button>
 
+                    <!-- End of Navigation -->
                 </div>
 
+                <!-- End of Big Circle -->
             </div>
 
+            <!-- End of Preloader -->
         </div>
     </body>
 </html>
