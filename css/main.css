@@ -1,0 +1,291 @@
+@import url('https://fonts.cdnfonts.com/css/theano-modern');
+
+html, body{
+    background-color: black;
+    color: white;
+    font-family: 'Theano Modern', sans-serif;
+    margin: 0;
+}
+
+/* General Slide design */
+/* ----------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------*/
+
+/* Loader style "White circle" */
+/* ----------------------------------------------------------*/
+
+.loader{
+    position: absolute;                 
+    height: 40%;                        /* height size */
+    aspect-ratio: 1 / 1;                /* ration between height and width */
+    border: 2px solid white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);  
+    animation: scale 5s ease-in-out 0.5s;
+    animation-fill-mode: forwards;  
+    vertical-align: middle;
+}
+
+@keyframes scale {
+    0% { 
+        height: 40%;
+        opacity: 0;
+    }
+    
+    100% { 
+        height: 90%;
+        opacity: 1;
+    }
+}
+
+/* ----------------------------------------------------------*/
+
+/* discarding style for links, etc  */
+/* ----------------------------------------------------------*/
+
+a {
+    all: unset;
+}
+
+/* ----------------------------------------------------------*/
+
+/* Styling navigation ONLY on first page */
+/* ----------------------------------------------------------*/
+
+.text-box{
+    position: absolute; 
+    width: 50%; 
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    vertical-align: middle;
+    font-weight: 600;
+    animation: appear 6s;
+
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }    
+    85% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* ----------------------------------------------------------*/
+
+/* Link design ONLY for menu on index page */
+/* ----------------------------------------------------------*/
+
+.hoverable{
+    transition: color 0.5s, font-weight 0.5s; font-size: 0.5s;
+    font-weight: 600;
+    font-size: 7vh;
+    transition: font-size 0.7s, color 0.7s ease-out;
+}
+
+.hoverable:hover{
+    font-size: 8vh;
+    color: #cd0010;
+    font-weight: 700;
+    transition: font-size 0.7s, color 0.7s ease-out;
+}
+
+
+/* ----------------------------------------------------------*/
+
+/* Button redirection redirection css smoothing */
+/* ----------------------------------------------------------*/
+
+.button {
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.hiding {
+    animation: hide_redirect 3s ease-out;
+}
+
+
+@keyframes hide_redirect {
+    0%{
+        color: white;
+    }
+    66%{
+        color: black;
+    }
+    100%{
+        color: black;
+    }
+}
+
+.hiding_with_delay {
+    animation: hide_redirect_delay 3s ease-out;
+}
+
+@keyframes hide_redirect_delay {
+    0%{
+        color: white;
+    }
+    33%{
+        color: white;
+    }
+    66%{
+        color: white;
+    }
+    100%{
+        color: black;
+    }
+}
+
+.bluring {
+    animation: bluring 3s ease-out;
+}
+
+@keyframes hide_redirect_delay {
+    0%{
+        filter: blur(0px);
+    }
+    33%{
+        filter: blur(0px);
+    }
+    100%{
+        filter: blur(100px);
+    }
+}
+
+/* ----------------------------------------------------------*/
+
+/* About page */
+/* ----------------------------------------------------------*/
+
+/* Appeare navigation */
+/* ----------------------------------------------------------*/
+
+.nav{
+    position: fixed;
+    width: 100%;
+    height: 0;
+    z-index: 2;
+    background: black;
+    opacity: 0;
+    transition: opacity 1s, height 1s ease-out;
+    overflow: hidden;
+}
+
+.navigation-list{
+    position: absolute;
+    height: 50%;
+    aspect-ratio: 1 / 1;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 8vh;
+
+}
+
+
+
+/* Hamburger Menu */
+.visuallyHidden {
+    position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height: 1px; width: 1px; 
+    margin: -1px; padding: 0; border: 0; 
+}
+
+.hamburger {
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    margin-top: 40px;
+    position: relative;
+    float: right;
+    margin-right: 40px;
+}
+
+.hamburger .bar {
+    padding: 0;
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    position: absolute; 
+}
+
+.bar1 {
+    top: 0;
+}
+
+.bar2,
+.bar3 {
+    top: 13.5px;
+}
+
+.bar3 {
+    right: 0;
+}
+
+.bar4 {
+    bottom: 0;
+}
+
+.checkbox1:checked + label > .hamburger1 > .bar1{
+    transform: rotate(45deg);
+    transform-origin: 5%;
+    background-color: #cd0010;
+    width: 41px
+}
+
+.checkbox1:checked + label > .hamburger1 > .bar2 {
+    transform: translateX(-40px) rotate(-360deg);
+    background-color: transparent;
+}
+
+.checkbox1:checked + label > .hamburger1 > .bar3 {
+    transform: translateX(40px) rotate(360deg);
+    background-color: transparent;
+}
+
+.checkbox1:checked + label > .hamburger1 > .bar4 {
+    transform-origin: 5%;
+    transform: rotate(-45deg);
+    background-color: #cd0010;
+    width: 41px;
+}
+
+.checkbox1:checked ~ .nav{
+    opacity: 1;
+    height: 100%;
+    transition: opacity 1s, height 1s ease-out;
+}
+
+/* ----------------------------------------------------------*/
+
+.header{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    color: #cd0010;
+    font-size: 3vh;
+    z-index: 0;
+}

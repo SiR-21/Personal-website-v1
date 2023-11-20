@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>bobbyhadz.com</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <style>
+    #box {
+      display: none;
+      width: 100px;
+      height: 100px;
+      background-color: salmon;
+      color: white;
+    }
+  </style>
+
+  <body>
+    <p>Select an option:</p>
+
+    <div>
+      <input type="checkbox" id="show" name="show" />
+      <label for="show">Show div</label>
+    </div>
+
+    <div id="box">Box is now shown</div>
+
+    <script>
+        const checkbox = document.getElementById('show');
+
+        const box = document.getElementById('box');
+
+        checkbox.addEventListener('click', function handleClick() {
+        if (checkbox.checked) {
+            box.style.display = 'block';
+        } else {
+            box.style.display = 'none';
+        }
+        });
+
+    </script>
+  </body>
+</html>
